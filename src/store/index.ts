@@ -5,6 +5,7 @@ import globalReducer from './reducers/globalReducer';
 import orderReducer from './reducers/orderReducer';
 import productReducer from './reducers/productReducer';
 import userReducer from './reducers/userReducer';
+import usuarioReducer from './reducers/usuarioReducer';
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     orderReducer,
     productReducer,
     userReducer,
+    usuarioReducer,
   },
 });
 

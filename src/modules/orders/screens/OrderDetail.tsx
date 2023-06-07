@@ -41,12 +41,12 @@ const OrderDetail = () => {
       ) : (
         <>
           <Descriptions title="Dados do usuário" bordered>
-            <Descriptions.Item label="Nome">{order.user?.name}</Descriptions.Item>
+            <Descriptions.Item label="Nome">{order.user?.nomeLogin}</Descriptions.Item>
             <Descriptions.Item label="Email" span={2}>
               {order.user?.email}
             </Descriptions.Item>
             <Descriptions.Item label="Telefone">
-              {insertMaskInPhone(order.user?.phone)}
+              {insertMaskInPhone(order.user?.telefone)}
             </Descriptions.Item>
             <Descriptions.Item label="CPF" span={2}>
               {insertMaskInCpf(order.user?.cpf)}

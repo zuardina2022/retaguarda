@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import { UserType } from '../../../modules/login/types/UserType';
+import { UsuarioModel } from '../../../modules/usuario/model/UsuarioModel';
 import { NotificationEnum } from '../../../shared/types/NotificationType';
 import { useAppSelector } from '../../hooks';
 import { setNotificationAction, setUserAction } from '.';
@@ -18,7 +18,7 @@ export const useGlobalReducer = () => {
       }),
     );
   };
-  const setUser = (user: UserType) => {
+  const setUser = (user: UsuarioModel) => {
     dispatch(setUserAction(user));
   };
 

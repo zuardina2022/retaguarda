@@ -11,6 +11,7 @@ export const useUser = () => {
   const { request, loading } = useRequests();
 
   useEffect(() => {
+    console.log('useUser.ts');
     request(URL_USER_ALL, MethodsEnum.GET, setUsers);
   }, []);
 
@@ -22,7 +23,7 @@ export const useUser = () => {
     if (!value) {
       setUsersFiltered([...users]);
     } else {
-      setUsersFiltered([...users.filter((user) => user.name.includes(value))]);
+      setUsersFiltered([...users.filter((user) => user.NomeLogin.includes(value))]);
     }
   };
 

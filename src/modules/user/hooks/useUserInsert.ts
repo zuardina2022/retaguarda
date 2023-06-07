@@ -39,6 +39,7 @@ export const useUserInsert = () => {
   };
 
   const handleInsertAdmin = async () => {
+    console.log('useUserInsert.ts');
     const result = await request(URL_USER, MethodsEnum.POST, undefined, user);
     if (result) {
       navigate(UserRoutesEnum.USER);

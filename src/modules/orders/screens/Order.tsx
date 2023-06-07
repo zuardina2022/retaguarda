@@ -24,7 +24,7 @@ const columns: ColumnsType<OrderType> = [
     title: 'Usuário',
     dataIndex: 'user',
     key: 'user',
-    render: (_, target) => <a>{target.user?.name}</a>,
+    render: (_, target) => <a>{target.user?.nomeLogin}</a>,
   },
   {
     title: 'Qtd. Produtos',

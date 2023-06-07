@@ -8,6 +8,7 @@ import { loginRoutes } from './modules/login/routes';
 import { orderScreens } from './modules/orders/routes';
 import { productScreens } from './modules/product/routes';
 import { userScreens } from './modules/user/routes';
+import { usuarioScreens } from './modules/usuario/routes';
 import { URL_USER } from './shared/constants/urls';
 import { MethodsEnum } from './shared/enums/methods.enum';
 import { getAuthorizationToken, verifyLoggedIn } from './shared/functions/connection/auth';
@@ -22,6 +23,7 @@ const routesLoggedIn: RouteObject[] = [
   ...firstScreenRoutes,
   ...userScreens,
   ...orderScreens,
+  ...usuarioScreens,
 ].map((route) => ({
   ...route,
   loader: verifyLoggedIn,
@@ -36,7 +38,9 @@ function App() {
 
   useEffect(() => {
     const token = getAuthorizationToken();
-    if (token) {
+    console.log('token: ' + token);
+    if (!token) {
+      console.log('faz request');
       request(URL_USER, MethodsEnum.GET, setUser);
     }
   }, []);

@@ -16,13 +16,13 @@ import { UserTypeEnum } from '../../../shared/enums/userType.enum';
 import { getUserInfoByToken } from '../../../shared/functions/connection/auth';
 import { insertMaskInCpf } from '../../../shared/functions/cpf';
 import { insertMaskInPhone } from '../../../shared/functions/phone';
-import { UserType } from '../../login/types/UserType';
+import { UsuarioModel } from '../../usuario/model/UsuarioModel';
 import { useUser } from '../hooks/useUser';
 import { UserRoutesEnum } from '../routes';
 
 const { Search } = Input;
 
-const columns: ColumnsType<UserType> = [
+const columns: ColumnsType<UsuarioModel> = [
   {
     title: 'Id',
     dataIndex: 'id',
@@ -87,7 +87,7 @@ const User = () => {
               <Search placeholder="Buscar usuário" onSearch={handleOnChangeSearch} enterButton />
             </LimitedContainer>
             <LimitedContainer width={180}>
-              {userToken?.typeUser === UserTypeEnum.Root && (
+              {userToken?.tipoUsuario === UserTypeEnum.Root && (
                 <Button type="primary" onClick={handleGoToInsertAdmin}>
                   Inserir Admin
                 </Button>

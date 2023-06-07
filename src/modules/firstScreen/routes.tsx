@@ -1,6 +1,6 @@
 import { RouteObject } from 'react-router-dom';
 
-import FirstScreen from './screens/FirstScreen';
+import FirstScreen from './screens/DaschScreen';
 import PageNotFound from './screens/PageNotFound';
 
 export enum FirstScreenRoutesEnum {

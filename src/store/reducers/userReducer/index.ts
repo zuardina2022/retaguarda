@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { UserType } from '../../../modules/login/types/UserType';
+import { UsuarioModel } from '../../../modules/usuario/model/UsuarioModel';
 
 interface UserState {
-  users: UserType[];
+  users: UsuarioModel[];
 }
 
 const initialState: UserState = {
@@ -14,7 +14,7 @@ export const counterSlice = createSlice({
   name: 'userReducer',
   initialState,
   reducers: {
-    setUsersAction: (state, action: PayloadAction<UserType[]>) => {
+    setUsersAction: (state, action: PayloadAction<UsuarioModel[]>) => {
       state.users = action.payload;
     },
   },
